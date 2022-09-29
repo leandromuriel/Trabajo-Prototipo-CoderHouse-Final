@@ -1,0 +1,22 @@
+{
+  "name": "coder-clon",
+  "version": "1.0.0",
+  "description": "Proyecto de práctica",
+  "main": "index.js",
+  "scripts": {
+    "build-sass": "node-sass --include-path scss ./scss/style.scss ./css/style.css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sebastian-asm/coder-clon.git"
+  },
+  "author": "Sebastián Sánchez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sebastian-asm/coder-clon/issues"
+  },
+  "homepage": "https://github.com/sebastian-asm/coder-clon#readme",
+  "devDependencies": {
+    "node-sass": "^7.0.3"
+  }
+}

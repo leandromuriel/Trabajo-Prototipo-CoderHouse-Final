@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sebastian-asm.github.io/coder-clon/sitemap.xml

@@ -1,0 +1,61 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #eee;
+  font-family: 'Lato', sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  line-height: 1.5;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.whatsapp {
+  position: fixed;
+  bottom: 40px;
+  right: 20px;
+}
+
+// extends
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.templateButton {
+  display: inline-block;
+  color: $fontLight;
+  border-radius: $borderRadius;
+  cursor: pointer;
+  transition: $transition;
+  font-weight: bold;
+  font-size: 16px;
+  border: 0;
+}
+
+// mixins
+@mixin templateGrid($columns) {
+  display: grid;
+  grid-template-columns: repeat($columns, 1fr);
+  gap: 50px;
+}
+
+@mixin templateFlex($valueJustify, $alignItems) {
+  display: flex;
+  justify-content: $valueJustify;
+
+  @if ($alignItems == true) {
+    align-items: center;
+  }
+}

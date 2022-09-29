@@ -1,0 +1,186 @@
+// hero
+.hero {
+  background-image: linear-gradient(45deg, #14532d, $primary);
+  padding: 60px 20px;
+  color: $fontLight;
+
+  &__content {
+    @extend .container;
+    @include templateGrid(2);
+    align-items: center;
+
+    &-info {
+      h1 {
+        color: #fff;
+        font-size: 50px;
+        margin-bottom: 20px;
+      }
+
+      p {
+        margin-bottom: 40px;
+      }
+
+      a {
+        @extend .templateButton;
+        background-color: $bgDark;
+        padding: 15px 30px;
+
+        &:hover {
+          background-color: #1a2748;
+        }
+      }
+    }
+
+    &-video {
+      width: 100%;
+      border-radius: $borderRadius;
+      box-shadow: $shadow;
+      transition: $transition;
+
+      &:hover {
+        transform: rotate(5deg);
+      }
+    }
+  }
+}
+
+// seccion de cursos
+.courses {
+  margin-top: 60px;
+  padding: 0 20px;
+
+  &__title {
+    margin-bottom: 40px;
+    text-align: center;
+    font-size: 30px;
+  }
+
+  &__content {
+    @extend .container;
+    @include templateGrid(3);
+
+    .card {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: $borderRadius;
+      box-shadow: $shadow;
+      transition: $transition;
+
+      &:hover {
+        transform: translateY(-15px);
+      }
+
+      /* relative: flujo normal del documento */
+      /* absolute: es removido del flujo normal */
+      &__header {
+        position: relative;
+
+        &-tag {
+          position: absolute;
+          padding: 8px;
+          right: 0;
+          color: #fff;
+          background-color: rgba(255, 255, 255, 0.5);
+          border-bottom-left-radius: 10px;
+
+          &--strong {
+            text-transform: uppercase;
+            font-weight: bold;
+          }
+        }
+
+        &-img {
+          width: 100%;
+          border-radius: $borderRadius;
+          margin-bottom: 20px;
+        }
+      }
+
+      &__title {
+        font-size: 20px;
+        margin-bottom: 20px;
+      }
+
+      &__description {
+        margin-bottom: 40px;
+      }
+
+      &__link {
+        background-color: $primary;
+        width: 100%;
+        display: inline-block;
+        padding: 15px 0;
+        text-align: center;
+        color: $fontLight;
+        border-radius: $borderRadius;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 16px;
+        transition: $transition;
+        position: relative;
+
+        &:hover {
+          background-color: #1ca24d;
+
+          &::after {
+            content: '\276F';
+            position: absolute;
+            right: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// seccion estadisticas
+.statistics {
+  margin-top: 80px;
+  padding: 100px 20px;
+  background-image: url('../assets/images/bg.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+
+  &__content {
+    @extend .container;
+    @include templateFlex(space-evenly, false);
+    color: $fontLight;
+
+    &-data {
+      font-size: 40px;
+      text-align: center;
+
+      span {
+        display: block;
+        font-size: 20px;
+        margin-top: 5px;
+      }
+    }
+  }
+}
+
+@media (max-width: $bpLarge) {
+  .courses__content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero__content {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: $bpSmall) {
+  .courses__content {
+    grid-template-columns: 1fr;
+  }
+
+  .statistics__content {
+    flex-direction: column;
+
+    &-data {
+      margin: 30px 0;
+    }
+  }
+}

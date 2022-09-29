@@ -1,0 +1,104 @@
+.header {
+  background-color: $bgDark;
+  padding: 30px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+
+  &__content {
+    @extend .container;
+    @include templateFlex(space-between, true);
+
+    &-title {
+      color: $primary;
+
+      &:hover::after {
+        content: 'inicio';
+        margin-left: 8px;
+        font-size: 14px;
+        color: $fontLight;
+      }
+    }
+
+    // desktop
+    &-navbar {
+      display: flex;
+      align-items: center;
+
+      li {
+        margin: 0 15px;
+        transition: $transition;
+
+        &:last-child {
+          border: 1px solid $primary;
+          border-radius: $borderRadius;
+          padding: 10px;
+          margin-right: 0;
+        }
+
+        &:active {
+          transform: scale(0.9);
+        }
+
+        a {
+          color: $fontLight;
+          font-weight: bold;
+          transition: $transition;
+
+          &:hover {
+            color: $primary;
+          }
+        }
+      }
+    }
+
+    // mobile
+    &-navbar-mobile {
+      display: none;
+
+      i {
+        font-size: 35px;
+        color: $fontLight;
+      }
+
+      &:hover > ul {
+        display: block;
+      }
+
+      ul {
+        display: none;
+        position: absolute;
+        right: 0;
+        top: 100px;
+        width: 100%;
+        background-color: $bgDark;
+
+        li {
+          padding: 25px 0;
+          text-align: center;
+
+          a {
+            color: $fontLight;
+            font-weight: bold;
+          }
+
+          &:nth-child(even) {
+            background-color: #1a2748;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $bpMedium) {
+  .header__content {
+    &-navbar {
+      display: none;
+    }
+
+    &-navbar-mobile {
+      display: block;
+    }
+  }
+}
